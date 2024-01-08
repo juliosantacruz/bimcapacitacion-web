@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/img/1Logo-BIM-Capacitacion-768x432-1.png";
+---
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      <a href="/">
+        <Image src={logo} width={150} height={80} alt="soy un logo" />
+      </a>
+    </div>
+    <div class="enlaces-header">
+      <a href="/" class="inicio"> Inicio</a>
+      <a href="/post">Blog</a>
+      <a href="/descargas">Descargas</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+nav{
+  width: 100%;
+  height: 80px;
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid transparent;
+  box-shadow: 1px 1px 10px 0 rgb(139, 132, 132, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: ease-in-out 0.5s;
+
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+  }
+
+  .logo {
+    width: 20%;
+    height: 80px;
+  }
+
+  .logo img {
+    width: 100px;
+
+    vertical-align: top;
+    object-fit: contain;
+  }
+
+  .enlaces-header {
+    transition: ease-in 0.5s;
+  }
+
+  .nav .enlaces-header > a {
+    padding: 10px 15px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .nav .enlaces-header > a:hover {
+    border-bottom: solid 2px black;
+    transition: color 0.5s ease-in;
+  }
+  .inicio {
+    display: none;
+  }
+  .boton-menu {
+    display: none;
+    /* font-size: 20px; */
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    z-index: 100;
+    cursor: pointer;
+    line-height: 80px;
+    transition: color 0.8s ease-in;
+  }
+</style>
