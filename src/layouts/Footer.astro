@@ -1,3 +1,22 @@
+---
+import { Image } from "astro:assets";
+import SocialMedia from "../components/SocialMedia.astro";
+import jsLogo from "../assets/img/logo_450x200_azul_trans.png"
+---
+
 <footer>
-  <h3>Soy el Footer :D</h3>
+  <Image src={jsLogo} alt='logo' class='jsLogo'/>
+  <SocialMedia/>
 </footer>
+
+<style>
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .jsLogo{
+      height: 80px;
+      width: auto;
+    }
+  }
+</style>
