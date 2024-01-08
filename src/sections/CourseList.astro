@@ -1,18 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import LogoTransparente from "../assets/img/1Logo-BIM-Capacitacion-transparente.png";
-
 ---
 
-<section class='CourseList'>
+<section class="CourseList">
   <div class="seccion-listado">
-    <div class=" listado-cursos" data-aos="fade-up">
-      <h2>
-         Cursos Presenciales Revit
-      </h2>
+    <div class="listado-cursos">
+      <h2>Cursos Presenciales Revit</h2>
       <ul>
         <li>
-          <a href="#">✅ Curso Revit Basico </a>
+          <a href="#">✅ Curso Revit Basico</a>
         </li>
         <li>
           <a href="#">✅ Curso Revit Arquitectonico</a>
@@ -32,29 +29,29 @@ import LogoTransparente from "../assets/img/1Logo-BIM-Capacitacion-transparente.
       </ul>
     </div>
     <div class="listado-cursos-img">
-      <Image src={LogoTransparente} alt="" width={500}  height={300}/>
+      <Image src={LogoTransparente} alt="" width={500} height={300} />
     </div>
   </div>
 </section>
 
-
 <style>
-  .CourseList{
-    width: 100%;
-  max-width: 2000px;
-  background-color: #efefef;
-}
+  .CourseList {
+    padding: var(--global-padding);
+
+    /* width: 100%; */
+    /* max-width: 2000px; */
+    background-color: #efefef;
+  }
 
   .seccion-listado {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50px;
   }
 
   .listado-cursos {
-    width: 100%;
+    width: 50%;
   }
 
   .listado-cursos li {
@@ -64,23 +61,15 @@ import LogoTransparente from "../assets/img/1Logo-BIM-Capacitacion-transparente.
   }
 
   .listado-cursos-img {
-    width: 100%;
+    width: 50%;
     margin: 50px 0;
   }
 
   .listado-cursos-img img {
     width: 100%;
-    height:auto;
+    height: auto;
     object-fit: cover;
   }
 
-  @media screen and (min-width: 800px) {
-    .seccion-listado {
-      flex-direction: row;
-    }
-    .listado-cursos-img img {
-    max-width: 500px;
 
-  }
-  }
 </style>
