@@ -1,6 +1,6 @@
 <div class="redes-sociales">
   <div class="social-media-icon facebook">
-    <a href="#" class="icon-link">
+    <a href="https://www.facebook.com/BIMCapacitacion" target="_blank" class="icon-link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -14,7 +14,7 @@
     </a>
   </div>
   <div class="social-media-icon instagram">
-    <a href="#" class="icon-link">
+    <a href="https://www.instagram.com/bim.capacitacion/" target="_blank" class="icon-link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -30,7 +30,7 @@
     </a>
   </div>
   <div class="social-media-icon youtube">
-    <a href="#" class="icon-link">
+    <a href="https://www.youtube.com/@BIMCapacitacion" target="_blank" class="icon-link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -46,14 +46,15 @@
 </div>
 
 <style>
-    .redes-sociales {
+  .redes-sociales {
     width: 60%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    gap: 15px;
   }
   .social-media-icon {
-    margin: 10px;
+    /* margin: 10px; */
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -66,28 +67,17 @@
       align-items: center;
       height: 100%;
       width: 100%;
-      svg{
+      svg {
         fill: black;
       }
-
     }
   }
   .social-media-icon:hover {
-    margin: 10px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: solid 2px black;
-    transition: color 0.3s ease-in-out;
-    line-height: 24px;
-    .icon-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      width: 100%;
 
-      svg{
+    .icon-link {
+
+
+      svg {
         fill: white;
       }
     }
@@ -114,5 +104,23 @@
     color: white;
     background-color: #ff0000;
     border: solid 2px rgba(0, 0, 0, 0.418);
+  }
+
+  /* @media screen and (max-width: 1400px) {
+  }
+  @media screen and (max-width: 1200px) {
+  }
+  @media screen and (max-width: 992px) {
+  }
+
+  @media screen and (max-width: 768px) {
+  } */
+  @media screen and (max-width: 576px) {
+    .social-media-icon {
+    height: 30px;
+    width: 30px;
+
+
+  }
   }
 </style>
