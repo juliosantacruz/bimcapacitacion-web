@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+import contactImage from "../assets/img/undraw_News_re_6uub.png";
+---
+
+<section class="contactUs">
+  <div class="contacto-img">
+    <Image src={contactImage} width={500} height={300} alt="contact" />
+  </div>
+
+  <div class="contacto-text">
+    <h2>Suscribete para recibir Noticias</h2>
+
+    <p>
+      Si te gusta nuesrto contenido dejanos tu correo para enviarte noticias de
+      nuestra pagina
+    </p>
+
+    <form action="">
+      <input type="text" placeholder="Email" class="email"/>
+      <input class="btn-submit" type="submit" />
+    </form>
+  </div>
+</section>
+
+<style>
+  .contactUs {
+    padding: var(--global-padding);
+    max-width: 1440px;
+    margin: 0 auto;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    text-align: center;
+    margin: 30px auto;
+  }
+
+  .contacto-img {
+    width: 40%;
+  }
+  .contacto-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contacto-text {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .contacto-text > h2 {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .contacto-text > p {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+
+  .contacto-text input[type="text"] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+  }
+
+  .contacto-text input:focus {
+    border-color: green;
+  }
+
+  .contacto-text input[type="submit"] {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    background: #4e66f8;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    /* Prevent double borders */
+    cursor: pointer;
+  }
+
+  .contacto-text input[type="submit"]:hover {
+    background: #0b7dda;
+  }
+
+  /* @media screen and (max-width: 1400px) {
+  }
+  @media screen and (max-width: 1200px) {
+  }
+  @media screen and (max-width: 992px) {
+  } */
+
+  @media screen and (max-width: 768px) {
+  }
+  @media screen and (max-width: 576px) {
+    .contactUs{
+      flex-direction: column;
+
+      .contacto-text{
+        width: 100%;
+
+        form{
+          width: 100%;
+
+          display: flex;
+          .btn-submit{
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+</style>

@@ -44,6 +44,8 @@ import LogoTransparente from "../assets/img/1Logo-BIM-Capacitacion-transparente.
   }
 
   .seccion-listado {
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,12 +54,17 @@ import LogoTransparente from "../assets/img/1Logo-BIM-Capacitacion-transparente.
 
   .listado-cursos {
     width: 50%;
+    ul{
+          padding: 0;
+
+        }
   }
 
   .listado-cursos li {
     font-size: 20px;
     margin: 20px 30px;
     list-style: none;
+    text-decoration: none;
   }
 
   .listado-cursos-img {
@@ -70,6 +77,36 @@ import LogoTransparente from "../assets/img/1Logo-BIM-Capacitacion-transparente.
     height: auto;
     object-fit: cover;
   }
+  /* @media screen and (max-width: 1400px) {
+  }
+  @media screen and (max-width: 1200px) {
+  }
+  @media screen and (max-width: 992px) {
+  } */
 
+  @media screen and (max-width: 768px) {
+    .listado-cursos li {
+    margin: 20px 0;
+  }
+  }
+  @media screen and (max-width: 576px) {
+    .seccion-listado {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
+      .listado-cursos{
+        width: 100%;
+
+        ul{
+          padding: 0 20px;
+        }
+      }
+      .listado-cursos-img{
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
 </style>

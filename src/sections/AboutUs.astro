@@ -39,7 +39,9 @@
 <style>
 
   .AboutUs{
-    padding: 0 100px;
+    padding: var(--global-padding);
+    max-width: 1440px;
+    margin: 0 auto;
   }
   .question {
     width: 100%;
@@ -76,5 +78,23 @@
     background-attachment: fixed;
     background-position: left;
     min-height: 300px;
+  }
+
+  /* @media screen and (max-width: 1400px) {
+  }
+  @media screen and (max-width: 1200px) {
+  }
+  @media screen and (max-width: 992px) {
+  }
+
+  @media screen and (max-width: 768px) {
+  } */
+  @media screen and (max-width: 576px) {
+    .question{
+      flex-direction: column-reverse;
+    }
+    .textBox {
+    padding: 0 ;
+  }
   }
 </style>
