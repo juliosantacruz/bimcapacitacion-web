@@ -1,0 +1,17 @@
+---
+export function getStaticPaths(){
+  return[
+    {params:{slug:'test'}}
+  ]
+}
+
+
+const {slug}=Astro.params
+
+---
+
+
+<section>
+
+  <h1>{slug}</h1>
+</section>

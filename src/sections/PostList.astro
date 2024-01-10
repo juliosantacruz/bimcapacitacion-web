@@ -1,28 +1,36 @@
 ---
 import { Image } from "astro:assets";
-import carTest from "../assets/img/COMO DESCARGAR E INSTALAR REVIT 2020.jpg"
+import carTest from "../assets/img/COMO DESCARGAR E INSTALAR REVIT 2020.jpg";
 import PostCard from "../components/PostCard.astro";
+
+const res = await fetch(
+  "https://p01--restapi--qzvdk8qp7kvm.code.run/bimcapacitacion/api/v1/post"
+);
+const data = await res.json();
+
+// console.log(data);
 ---
 
 <section class="PostList">
   <h2>Mira nuestros Tutoriales</h2>
   <div class="PostListGroup">
+    {
+      data &&
+        data.map((element: any) => {
+          if(element.featured){return <PostCard key={element.id} data={element}/>}
 
-    <PostCard/>
-    <PostCard/>
-    <PostCard/>
+        })
+    }
   </div>
-
 </section>
 
 <style>
-  .PostList{
-  padding: var(--global-padding);
-  max-width: 1440px;
+  .PostList {
+    padding: var(--global-padding);
+    max-width: 1440px;
     margin: 0 auto;
   }
-  .PostListGroup{
-
+  .PostListGroup {
     display: flex;
     flex-direction: column;
     align-items: center;
