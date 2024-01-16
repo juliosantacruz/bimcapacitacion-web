@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import LogoTransparente from "../assets/img/1Logo-BIM-Capacitacion-transparente.png";
 import RevitModel from "../components/RevitModel";
+// import {leModel} from '../assets/gltfModel/test1.gltf';
 ---
 
 <section class="CourseList">
@@ -31,7 +32,7 @@ import RevitModel from "../components/RevitModel";
     </div>
     <div class="listado-cursos-img">
       <!-- <Image src={LogoTransparente} alt="" width={500} height={300} /> -->
-      <RevitModel client:visible/>
+      <RevitModel client:load />
     </div>
   </div>
 </section>
@@ -46,6 +47,7 @@ import RevitModel from "../components/RevitModel";
   }
 
   .seccion-listado {
+    color: #a0a0a0;
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
