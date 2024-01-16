@@ -78,7 +78,7 @@ export default function RevitModel(ModelTest: any) {
 
     const gltfLoader = new GLTFLoader();
     gltfLoader.load(
-      "../../public/glbModel/IqeaModel.glb",
+      "./glbModel/IqeaModel.glb",
       (gltf) => {
         gltf.scene.scale.set(0.5, 0.5, 0.5);
 
