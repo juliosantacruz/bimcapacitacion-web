@@ -43,7 +43,7 @@ const { title, description } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-
+    scroll-behavior: smooth;
 
 	}
   body{
@@ -61,5 +61,13 @@ const { title, description } = Astro.props;
     text-decoration: none;
     color: black;
 
+  }
+
+  .pageTitle{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
   }
 </style>

@@ -2,7 +2,7 @@
 import GoogleAnalitics from "../components/GoogleAnalitics.astro";
 const {title, description} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-const favicon = '../assets/img/favicon.ico'
+// const favicon = '../assets/img/favicon.ico'
 ---
 
 <head>
@@ -13,6 +13,7 @@ const favicon = '../assets/img/favicon.ico'
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 	<!-- Primary Meta Tags -->
 	<title>{title}</title>
@@ -45,7 +46,6 @@ const favicon = '../assets/img/favicon.ico'
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> -->
 	<meta name="msapplication-TileColor" content="#2b5797" />
 	<meta name="theme-color" content="#ffffff" />
-
 	<!-- Open Graph / Facebook -->
 	<meta property="og:locale" content="es_ES" />
 	<meta property="og:type" content="website" />
