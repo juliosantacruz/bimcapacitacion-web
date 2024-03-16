@@ -13,6 +13,6 @@ export default defineConfig({
       include: ["**/react/*"],
     }),
   ],
-  site: "https://juliosantacruz.dev",
-  base: "/bimcapacitacion-web",
+  site: "https://www.bimcapacitacion.com",
+  base: "/",
 });
