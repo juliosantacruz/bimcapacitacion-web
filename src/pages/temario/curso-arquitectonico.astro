@@ -2,13 +2,13 @@
 import { Image } from "astro:assets";
 import imgTemario from "../../assets/img/IsometricoDepartamentos.jpg";
 import Layout from "../../layouts/Layout.astro";
-// import ContactUs from "../../sections/ContactUs.astro";
+import ContactUs from "../../sections/ContactUs.astro";
 ---
 
 <Layout title="Tutoriales" description="Tutoriales para ti..">
   <main>
     <div class="pageTitle">
-      <h1>Temario Curso Revit Basico</h1>
+      <h1>Temario Curso Revit Arquitectonico</h1>
     </div>
 
     <section class="content">
@@ -31,38 +31,36 @@ import Layout from "../../layouts/Layout.astro";
           </p>
           <h3>Temario</h3>
           <ol>
-            <li>Introducción BIM desde Revit</li>
-            <li>Recorrido de interfaz del programa</li><li>
-              Diferencia entre proyecto y familias
-            </li>
+            <li>Templete Arquitectónico</li>
+            <li>Crear y editar materiales y sus texturas</li>
+            <li>Ubicaciones geográficas del proyecto, sombras y soleamiento</li>
             <li>
-              Modelado de elementos constructivos (‐Losas ‐Muros ‐Puertas
-              ‐Ventanas ‐Escaleras)
+              Modelado de elementos compuestos arquitectónicos (‐Losas ‐Muros)
             </li>
-            <li>
-              Manejo de niveles y sus propiedades (‐Visibility and graphics
-              ‐Underlay ‐View range ‐Crop view ‐Diciplinas)
-            </li>
-            <li>Manejo de elevaciones (‐vistas en corte ‐fachada)</li>
-            <li>Manejo de vistas 3d (‐Isométrico ‐Fotografías)</li>
-            <li>Insertar componentes</li>
-            <li>Creación de componentes o familias</li>
-            <li>Importación de referencias(‐Archivos de AutoCAD)</li>
-            <li>
-              Vinculación de referencias (‐Proyectos Revit‐Archivos de AutoCAD)
-            </li>
-            <li>Creación de detalles constructivos en sitio y hoja</li>
-            <li>Creación de tablas</li>
-            <li>Creación de leyendas</li>
-            <li>Creación y modificación de pies de planos</li>
-            <li>Creación y modificación de planos</li>
-            <li>Exportar formatos CAD</li>
+
+            <li>Manejo y definición de espacios (cuartos y áreas)</li>
+            <li>Creación de familias paramétricas.</li>
+            <li>Creación de renders con Revit</li>
+            <li>Creación de un recorrido virtual con Revit</li>
+            <li>Manejo de Opciones de diseño</li>
+            <li>Modelado a través de masas</li>
+            <li>Importación o modelado de topografía</li>
+            <li>Edición de familias descargadas de internet</li>
+            <li>Creación de familias individuales desde cero</li>
+            <li>Creación de familias in‐situ</li>
+            <li>Parametrización de familias</li>
           </ol>
         </div>
       </div>
       <div class="img-content">
         <div class="img-frame">
-          <Image src={imgTemario} alt="asdf" width={700} height={820} loading={'lazy'}/>
+          <Image
+            src={imgTemario}
+            alt="asdf"
+            width={700}
+            height={820}
+            loading={"lazy"}
+          />
         </div>
       </div>
     </section>
@@ -72,7 +70,7 @@ import Layout from "../../layouts/Layout.astro";
 
 <style>
   .content {
-    margin : 50px 0;
+    margin: 50px 0;
     display: flex;
 
     .text-content {
@@ -81,7 +79,7 @@ import Layout from "../../layouts/Layout.astro";
       .text-frame {
         padding: 0 0 0 120px;
       }
-      li{
+      li {
         margin: 10px 0;
       }
     }
