@@ -1,0 +1,147 @@
+---
+import { Image } from "astro:assets";
+import imgTemario from "../../assets/img/IsometricoDepartamentos.jpg";
+import Layout from "../../layouts/Layout.astro";
+import ContactUs from "../../sections/ContactUs.astro";
+import { getCollection } from "astro:content";
+import { marked } from "marked";
+
+export async function getStaticPaths() {
+  const temarioEntries = await getCollection("temarios");
+  return temarioEntries.map((entry: any) => {
+    // console.log(entry)
+    return {
+      params: { slug: entry.slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry }: any = Astro.props;
+console.log("entry->", entry);
+const contentBody = marked.parse(entry.body);
+const imageTemario = entry.data.image;
+---
+
+<Layout title="Tutoriales" description="Tutoriales para ti..">
+  <main>
+    <div class="pageTitle">
+      <h1>{entry.data.title}</h1>
+    </div>
+
+    <section class="content">
+      <div class="text-content">
+        <div class="text-frame">
+          <div set:html={contentBody} />
+        </div>
+      </div>
+      <div class="img-content">
+        <div class="img-frame">
+          <Image src={imageTemario} alt="asdf" loading={"lazy"} />
+        </div>
+      </div>
+    </section>
+    <!-- <ContactUs /> -->
+  </main>
+</Layout>
+
+<style>
+  .content {
+    margin: 50px 0;
+    display: flex;
+    padding: 0 120px 0 0;
+  }
+  .text-content {
+    width: 50%;
+
+    .text-frame {
+      padding: 0 0 0 120px;
+    }
+    li {
+      margin: 10px 0;
+    }
+  }
+  .img-content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .img-frame {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .content {
+      margin: 10px 0;
+
+      padding: 0 50px 0 0;
+    }
+    .text-content {
+      width: 60%;
+
+      .text-frame {
+        padding: 0 50px;
+      }
+      li {
+        margin: 5px 0;
+      }
+    }
+    .img-content {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .img-frame {
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .content {
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+    .text-content {
+      width: 100%;
+
+      .text-frame {
+        padding: 0 20px;
+      }
+      li {
+        margin: 5px 0;
+      }
+    }
+    .img-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .img-frame {
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 576px) {
+  }
+</style>
