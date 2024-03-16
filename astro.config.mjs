@@ -14,5 +14,5 @@ export default defineConfig({
     }),
   ],
   site: "https://juliosantacruz.dev",
-  base: "/",
+  base: "/bimcapacitacion-web",
 });
