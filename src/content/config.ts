@@ -11,6 +11,19 @@ const temariosCollection = defineCollection({
     }),
 });
 
+const tutorialesCollection = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      image: image().refine((img) => img.width >= 400, {
+        message: "Cover image must be at least 400 pixels wide!",
+      }),
+      imageAlt: z.string(),
+      YTVideo: z.string()
+    }),
+});
+
 export const collections = {
   temarios: temariosCollection,
+  tutoriales:tutorialesCollection,
 };

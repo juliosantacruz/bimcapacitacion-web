@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import Layout from '@layouts/Layout.astro';
+import ContactUs from "../../sections/ContactUs.astro";
+import { getCollection } from "astro:content";
+import { marked } from "marked";
+import { YouTube } from '@astro-community/astro-embed-youtube';
+
+export async function getStaticPaths() {
+  const temarioEntries = await getCollection("tutoriales");
+  return temarioEntries.map((entry: any) => {
+    // console.log(entry)
+    return {
+      params: { slug: entry.slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry }: any = Astro.props;
+console.log("entry->", entry);
+const contentBody = marked.parse(entry.body);
+const videoUrl = entry.data.YTVideo;
+---
+
+<Layout title="Tutoriales" description="Tutoriales para ti..">
+  <main>
+    <div class="pageTitle">
+      <h1>{entry.data.title}</h1>
+    </div>
+
+    <section class="content">
+      <div class="text-content">
+        <div class="text-frame">
+          <div set:html={contentBody} />
+        </div>
+      </div>
+      <div class="youtube-content">
+        <div class="youtube-frame">
+          <YouTube id={videoUrl} />
+        </div>
+      </div>
+    </section>
+    <!-- <ContactUs /> -->
+  </main>
+</Layout>
+
+<style>
+  .content {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 120px 0 0;
+  }
+  .text-content {
+    width: 100%;
+
+    .text-frame {
+      padding: 0 0 0 120px;
+    }
+    li {
+      margin: 10px 0;
+    }
+  }
+  .youtube-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .youtube-frame {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+
+  }
+  @media screen and (max-width: 768px) {
+
+  }
+  @media screen and (max-width: 576px) {
+  }
+</style>

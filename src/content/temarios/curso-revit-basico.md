@@ -2,7 +2,7 @@
 title: 'Curso Revit Basico'
 slug: 'curso-basico-revit'
 image: '../../assets/img/IsometricoDepartamentos.jpg'
-imageAlt: 'soy un alt'
+imageAlt: 'Isometrico '
 ---
 
  ## Introducción
