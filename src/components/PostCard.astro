@@ -1,10 +1,12 @@
 ---
 import { Image } from "astro:assets";
 // import carTest from "../assets/img/COMO DESCARGAR E INSTALAR REVIT 2020.jpg"
-const {data} = Astro.props
+const {dataCard} = Astro.props
+const {data} = dataCard
+
 ---
 
-<a href="#" class="CardPost">
+<a href={`tutoriales/${dataCard.slug}`} class="CardPost">
   <article >
     <div class="headerContent">
       <h3>{data.title.toUpperCase()}</h3>
@@ -17,7 +19,7 @@ const {data} = Astro.props
       </div>
       <div class="tarjeta-img">
         <Image
-          src={data.thumbnail}
+          src={data.image}
           width={200}
           height={120}
           alt=""
@@ -25,9 +27,7 @@ const {data} = Astro.props
       </div>
     </div>
     <div class="cardFooter">
-      <div class="tarjeta-categorias">
-        <b>tag - tag - tag</b>
-      </div>
+
     </div>
   </article>
 </a>

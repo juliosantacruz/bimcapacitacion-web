@@ -1,7 +1,7 @@
 ---
 title: 'Como crear un familia de espejo parametrica'
 slug: 'como-crear-familia-espejo'
-image: '../../assets/img/IsometricoDepartamentos.jpg'
+image: '../../assets/tutorialCover/cover-modelado-familia-espejo-parametrico.jpg'
 imageAlt: 'Cover de tutorial'
 YTVideo: 'https://www.youtube.com/watch?v=vYYmxsOFGFI'
 ---
