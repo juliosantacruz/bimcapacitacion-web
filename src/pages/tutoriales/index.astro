@@ -1,0 +1,56 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const tutorialesEntries = await getCollection("tutoriales");
+console.log(tutorialesEntries);
+---
+
+<Layout
+  title="Tutoriales Revit"
+  description="listado de temarios de cursos de Revit"
+>
+  <main class="temarioPage">
+    <h1>Tutoriales</h1>
+
+    {
+      tutorialesEntries &&
+        tutorialesEntries.map((element: any, index) => {
+          return (
+            <li>
+              <a href={`/${element.collection}/${element.slug}`}>
+                {index + 1} - {element.data.title}
+              </a>
+            </li>
+          );
+        })
+    }
+  </main>
+</Layout>
+
+<style>
+  .temarioPage {
+    padding: 0 120px;
+  }
+
+  li {
+    text-decoration: none;
+    list-style: none;
+    margin: 20px 0;
+    padding-left: 30px;
+    height: 100%;
+    line-height: 40px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+
+  @media screen and (max-width: 576px) {
+    .temarioPage {
+      padding: 0 20px;
+    }
+    li {
+      line-height: 30px;
+    }
+  }
+</style>

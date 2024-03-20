@@ -12,8 +12,8 @@ import logo from "../assets/img/1Logo-BIM-Capacitacion-768x432-1.png";
     </div>
     <div class="enlaces-header">
       <a href="/" class="inicio"> Inicio</a>
-      <a href="/post">Blog</a>
-      <a href="/descargas">Descargas</a>
+      <a href="/tutoriales">Tutoriales</a>
+      <!-- <a href="/descargas">Descargas</a> -->
     </div>
   </nav>
 </header>
@@ -22,7 +22,7 @@ import logo from "../assets/img/1Logo-BIM-Capacitacion-768x432-1.png";
 header{
   /* width: 100%; */
   padding: var(--global-padding);
-  height: 80px;
+  height: 70px;
   background: rgb(255, 255, 255);
   border-bottom: 1px solid transparent;
   box-shadow: 1px 1px 10px 0 rgb(139, 132, 132, 0.4);
@@ -36,7 +36,7 @@ header{
 
   display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 100%;
     width: 100%;
     margin: auto;
     align-items: center;
@@ -44,12 +44,12 @@ header{
 
   .logo {
     width: 20%;
-    height: 80px;
+    height: 100%;
   }
 
   .logo img {
     width: 100px;
-
+    height: 100%;
     vertical-align: top;
     object-fit: contain;
   }
@@ -82,5 +82,14 @@ header{
     cursor: pointer;
     line-height: 80px;
     transition: color 0.8s ease-in;
+  }
+
+  @media screen and (max-width: 576px) {
+    .temarioPage {
+      padding: 0 20px;
+    }
+    li {
+      line-height: 30px;
+    }
   }
 </style>
