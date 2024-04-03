@@ -1,7 +1,7 @@
 ---
 title: 'Curso Revit MEP'
 slug: 'curso-revit-mep'
-image: '../../assets/img/IsometricoDepartamentos.jpg'
+image: '../../assets/img/isometrico.jpg'
 imageAlt: 'Isometrico '
 ---
 

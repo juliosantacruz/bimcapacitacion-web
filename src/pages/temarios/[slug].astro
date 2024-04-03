@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 }
 
 const { entry }: any = Astro.props;
-console.log("entry->", entry);
+// console.log("entry->", entry);
 const contentBody = marked.parse(entry.body);
 const imageTemario = entry.data.image;
 ---
@@ -37,7 +37,7 @@ const imageTemario = entry.data.image;
       </div>
       <div class="img-content">
         <div class="img-frame">
-          <Image src={imageTemario} alt="asdf" loading={"lazy"} />
+          <Image src={imageTemario} alt="Image Course" loading={"lazy"} />
         </div>
       </div>
     </section>
@@ -49,20 +49,19 @@ const imageTemario = entry.data.image;
   .content {
     margin: 50px 0;
     display: flex;
-    padding: 0 120px 0 0;
+justify-content: center;
+    /* padding: 0 120px 0 0; */
   }
   .text-content {
     width: 50%;
 
-    .text-frame {
-      padding: 0 0 0 120px;
-    }
+
     li {
       margin: 10px 0;
     }
   }
   .img-content {
-    width: 50%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
