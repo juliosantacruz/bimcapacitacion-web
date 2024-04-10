@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BIMLogo from '../assets/img/1Logo-BIM-Capacitacion-768x432-1.png'
+import facebookLogo from '../assets/logos/Facebook_f_logo.png'
+import instagramLogo from '../assets/logos/Instagram_logo_2022.svg.png'
+import WhattsappLogo from '../assets/logos/WhatsApp.svg.png'
+import YoutubeLogo from '../assets/logos/YouTube_social_white_square_(2017).svg.png'
+import LinkCard from '@components/LinkCard.astro';
+---
+
+<Layout title="BIMCapacitacion Links" description='Cursos de Revit para ti'>
+	<main class="links">
+    <div class="header-links">
+      <img src={BIMLogo.src} alt="">
+      <h1>BIMCapacitacion</h1>
+    </div>
+    <div class="group-links">
+
+      <LinkCard title='Youtube' logo={YoutubeLogo.src} href='https://www.youtube.com/BIMCapacitacion' />
+      <LinkCard title='Instagram' logo={instagramLogo.src} href='https://www.instagram.com/bim.capacitacion/' />
+      <LinkCard title='Facebook' logo={facebookLogo.src} href='https://facebook.com/BIMCapacitacion' />
+      <LinkCard title='Whattsapp' logo={WhattsappLogo.src} href='https://wa.link/xdwmo2' />
+
+    </div>
+	</main>
+</Layout>
+
+<style>
+	.links {
+    height: calc( 100vh - 150px );
+
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+  .header-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+      width: 300px;
+    }
+  }
+  .group-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    width: 100%;
+
+
+  }
+
+</style>

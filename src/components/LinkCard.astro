@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  logo: string;
+}
+
+const { href, title, logo } = Astro.props;
+---
+
+<article class="card-links">
+  <div class="title">
+    <span class="icon">
+      <img src={logo} alt="logo" />
+    </span>
+    <h4>
+      {title}
+    </h4>
+  </div>
+  <a class="button" target="_blank" href={href}>ir</a>
+</article>
+
+<style>
+  .card-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    gap: 40px;
+
+    padding: 0 20px;
+    box-shadow: 0 0 2px 2px #cacaca;
+
+    /* border: 1px solid black; */
+    border-radius: 8px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .icon {
+        height: 100%;
+        width: 40px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .button{
+      text-align: center;
+      width: 50px;
+      box-shadow: 0 0 2px 2px #cacaca;
+
+      border-radius: 7px;
+    padding: 5px;
+    }
+  }
+</style>
