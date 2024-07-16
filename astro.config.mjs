@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 
@@ -15,4 +15,7 @@ export default defineConfig({
   ],
   site: "https://www.bimcapacitacion.com",
   base: "/",
+  image: {
+    service: passthroughImageService(),
+  },
 });
