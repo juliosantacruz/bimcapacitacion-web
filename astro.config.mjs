@@ -8,7 +8,11 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [
     sitemap(),
-    partytown(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
     react({
       include: ["**/react/*"],
     }),
