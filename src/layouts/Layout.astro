@@ -1,26 +1,56 @@
 ---
 import BaseHead from './BaseHead.astro';
 import Footer from './Footer.astro';
-import NavBar from './NavBar.astro';
+import Navbar from '../components/react/Navbar';
+import { ClientRouter } from 'astro:transitions';
+import '../styles/variables.css';
+import '../styles/components.css';
+
 interface Props {
-	title: string;
-  description:string
+  title: string;
+  description?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description = "BIM Capacitación - Aprende Revit y tecnologías BIM con expertos certificados" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-  <BaseHead title={title} description={description}/>
-	<body>
-    <NavBar/>
-		<slot />
-    <Footer/>
-	</body>
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description}/>
+    <ClientRouter />
+  </head>
+  <body>
+    <Navbar client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+    
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </body>
 </html>
+
 <style is:global>
-	:root {
+  :root {
     --global-padding: 0 100px;
 
     @media screen and (max-width:1400px){
@@ -40,32 +70,24 @@ const { title, description } = Astro.props;
     --global-padding: 0 20px;
     }
 
-	}
-	html {
-		font-family: system-ui, sans-serif;
+  }
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
     scroll-behavior: smooth;
 
-	}
+  }
   body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: black;
   }
-  a{
-    text-decoration: none;
-    color: black;
 
-  }
-  li{
-    text-decoration: none;
-    color: black;
-
+  main {
+    min-height: calc(100vh - var(--header-height));
   }
 
   .pageTitle{
     width: 100%;
-
     display: flex;
     justify-content: center;
     margin: 0 auto;

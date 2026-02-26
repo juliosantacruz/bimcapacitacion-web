@@ -1,56 +1,68 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import TutorialGrid from "../../components/react/TutorialGrid";
 
 const tutorialesEntries = await getCollection("tutoriales");
-console.log(tutorialesEntries);
+
+const tutorials = tutorialesEntries.map((tutorial) => ({
+  slug: tutorial.slug,
+  title: tutorial.data.title,
+  image: tutorial.data.image,
+  imageAlt: tutorial.data.imageAlt,
+  YTVideo: tutorial.data.YTVideo,
+}));
 ---
 
-<Layout
-  title="Tutoriales Revit"
-  description="listado de temarios de cursos de Revit"
->
-  <main class="temarioPage">
-    <h1>Tutoriales</h1>
+<Layout title="Tutoriales - BIM Capacitación" description="Aprende Revit con nuestros tutoriales en video">
+  <main>
+    <section class="tutorials-hero">
+      <div class="container">
+        <h1>Aprende con <span class="text-gradient">Tutoriales</span></h1>
+        <p class="hero-subtitle">
+          Explora nuestra colección de tutoriales en video y mejora tus habilidades en Revit y BIM
+        </p>
+      </div>
+    </section>
 
-    {
-      tutorialesEntries &&
-        tutorialesEntries.map((element: any, index) => {
-          return (
-            <li>
-              <a href={`/${element.collection}/${element.slug}`}>
-                {index + 1} - {element.data.title}
-              </a>
-            </li>
-          );
-        })
-    }
+    <section class="tutorials-section">
+      <div class="container">
+        <TutorialGrid client:load tutorials={tutorials} />
+      </div>
+    </section>
   </main>
 </Layout>
 
 <style>
-  .temarioPage {
-    padding: 0 120px;
+  main {
+    padding-top: var(--header-height);
   }
 
-  li {
-    text-decoration: none;
-    list-style: none;
-    margin: 20px 0;
-    padding-left: 30px;
-    height: 100%;
-    line-height: 40px;
-    cursor: pointer;
-    border: 1px solid black;
-    border-radius: 8px;
+  .tutorials-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
   }
 
-  @media screen and (max-width: 576px) {
-    .temarioPage {
-      padding: 0 20px;
-    }
-    li {
-      line-height: 30px;
+  .tutorials-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .tutorials-section {
+    padding: 4rem 0 6rem;
+  }
+
+  @media (max-width: 768px) {
+    .tutorials-hero h1 {
+      font-size: 2.5rem;
     }
   }
 </style>

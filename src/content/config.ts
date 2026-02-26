@@ -4,9 +4,7 @@ const temariosCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      image: image().refine((img) => img.width >= 400, {
-        message: "Cover image must be at least 400 pixels wide!",
-      }),
+      image: image(),
       imageAlt: z.string(),
     }),
 });
@@ -15,9 +13,7 @@ const tutorialesCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      image: image().refine((img) => img.width >= 400, {
-        message: "Cover image must be at least 400 pixels wide!",
-      }),
+      image: image(),
       imageAlt: z.string(),
       YTVideo: z.string()
     }),

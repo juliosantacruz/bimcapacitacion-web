@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Timeline from '../components/react/Timeline';
+---
+
+<Layout title="Nosotros - BIM Capacitación" description="Conoce nuestra metodología y trayectoria en la enseñanza de BIM">
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <h1>Sobre <span class="text-gradient">BIM Capacitación</span></h1>
+        <p class="hero-subtitle">
+          Transformando profesionales en expertos en tecnología BIM desde 2018
+        </p>
+      </div>
+    </section>
+
+    <section class="mission-section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-content">
+            <h2>Nuestra <span class="text-gradient">Misión</span></h2>
+            <p>
+              Democratizar el acceso a la tecnología BIM en Latinoamérica, formando profesionales
+              capaces de transformar la industria de la construcción mediante metodologías
+              innovadoras y sostenibles.
+            </p>
+          </div>
+          <div class="mission-visual">
+            <div class="vision-card">
+              <h3>Visión</h3>
+              <p>Ser la plataforma de referencia en educación BIM en Latinoamérica,
+              contribuyendo a la transformación digital del sector construcción.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <div class="container">
+        <h2 class="section-title">Nuestra <span class="text-gradient">Trayectoria</span></h2>
+        <Timeline client:visible />
+      </div>
+    </section>
+
+    <section class="values-section">
+      <div class="container">
+        <h2 class="section-title">Nuestros <span class="text-gradient">Valores</span></h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <h3>Excelencia</h3>
+            <p>Buscamos la excelencia en cada curso y proyecto que entregamos.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3>Compromiso</h3>
+            <p>Estamos comprometidos con el éxito de cada estudiante.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">💡</div>
+            <h3>Innovación</h3>
+            <p>Constante</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🌱</div>
+            <h3>Sostenibilidad</h3>
+            <p>Promovemos prácticas constructivas sostenibles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    padding-top: var(--header-height);
+  }
+
+  .about-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+  }
+
+  .about-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .mission-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .mission-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-content p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .vision-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+  }
+
+  .vision-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+
+  .vision-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .timeline-section {
+    padding: 6rem 0;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .values-section {
+    padding: 6rem 0;
+    background: var(--bg-secondary);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .value-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .value-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .value-card p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 1024px) {
+    .mission-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,7 +1,7 @@
 ---
 title: 'Curso Revit Arquitectonico'
 slug: 'curso-revit-arquitectonico'
-image: '../../assets/img/Casa-conteiner.jpg'
+image: ../../assets/img/Casa-conteiner.jpg
 imageAlt: 'soy un alt'
 ---
 

@@ -1,46 +1,119 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import {getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import CourseAccordion from '../../components/react/CourseAccordion';
 
-const temarioEntries = await getCollection('temarios')
+const temarioEntries = await getCollection('temarios');
 
+const coursesData = temarioEntries.map((temario) => ({
+  slug: temario.slug,
+  title: temario.data.title,
+}));
 ---
 
+<Layout title="Temarios de Cursos - BIM Capacitación" description="Explora nuestros cursos de Revit y BIM">
+  <main>
+    <section class="temarios-hero">
+      <div class="container">
+        <h1>Nuestros <span class="text-gradient">Temarios</span></h1>
+        <p class="hero-subtitle">
+          Explora el contenido detallado de cada curso y conoce las habilidades
+          que desarrollarás durante tu formación
+        </p>
+      </div>
+    </section>
 
-<Layout title="Temarios de Cursos" description="listado de temarios de cursos de Revit">
-<main class="temarioPage">
-
-  <h1>Temario</h1>
-
-  {
-    temarioEntries.map((element:any, index)=>{
-
-      return(<li><a href={`/temarios/${element.slug}`}>{index+1} - {element.data.title}</a></li>)
-    })
-  }
-</main>
+    <section class="temarios-section">
+      <div class="container">
+        <div class="courses-list">
+          {coursesData.map((course, index) => {
+            return(
+            <a class="course-card" href={`temarios/${course.slug}`}>
+              <div class="course-header">
+                <h2>{course.title}</h2>
+                {/* <p>{course.description}</p> */}
+              </div>
+              {/* {course.modules.length > 0 && (
+                <CourseAccordion
+                  client:visible
+                  modules={course.modules}
+                  courseName={course.title}
+                />
+              )} */}
+            </a>
+          )})}
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style>
-.temarioPage{
-  padding: 0 120px;
-}
+  main {
+    padding-top: var(--header-height);
+  }
 
-li{
-  text-decoration: none;
-  list-style: none;
-  margin: 20px 0;
-  padding-left: 30px;
-  height: 100%;
-  line-height: 40px;
-  cursor: pointer;
-  border: 1px solid black;
-  border-radius: 8px;
-}
+  .temarios-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+  }
 
-@media screen and (max-width: 576px) {
-  .temarioPage{
-  padding: 0 20px;
-}
+  .temarios-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .temarios-section {
+    padding: 4rem 0 6rem;
+  }
+
+  .courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .course-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    transition: all var(--transition-base);
+  }
+
+  .course-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .course-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .course-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .course-header p {
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+  }
+
+  @media (max-width: 768px) {
+    .temarios-hero h1 {
+      font-size: 2.5rem;
+    }
   }
 </style>

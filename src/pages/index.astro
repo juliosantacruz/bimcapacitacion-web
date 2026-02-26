@@ -1,25 +1,150 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/react/Hero';
 import AboutUs from '../sections/AboutUs.astro';
 import ContactUs from '../sections/ContactUs.astro';
 import CourseList from '../sections/CourseList.astro';
-import Hero from '../sections/Hero.astro';
-import PostList from '../sections/PostList.astro';
+import Tutoriales from '../sections/PostList.astro';
 ---
 
-<Layout title="BIMCapacitacion" description='Cursos de Revit para ti'>
-	<main>
-    <Hero/>
-    <AboutUs/>
-    <CourseList/>
-    <PostList/>
-    <ContactUs/>
-	</main>
+<Layout title="BIM Capacitación - Cursos de Revit y BIM" description="Aprende Revit y tecnologías BIM con expertos certificados">
+  <main>
+    <Hero client:visible />
+    <AboutUs />
+    <!-- <section class="bento-section"> -->
+      <!-- <div class="container">
+        <h2 class="section-title">Software que <span class="text-gradient">aprenderás</span></h2>
+        <p class="section-subtitle">Domina las herramientas líderes en modelado BIM</p>
+        <div class="bento-grid">
+          <div class="bento-card large">
+            <div class="bento-icon">🏗️</div>
+            <h3>Autodesk Revit</h3>
+            <p>El software líder en BIM para arquitectura, estructuras e ingeniería MEP</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-icon">📐</div>
+            <h3>AutoCAD</h3>
+            <p>Diseño 2D y 3D profesional</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-icon">🔧</div>
+            <h3>Revit MEP</h3>
+            <p>Modelado de instalaciones</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-icon">🏠</div>
+            <h3>Revit Architecture</h3>
+            <p>Diseño arquitectónico BIM</p>
+          </div>
+          <div class="bento-card wide">
+            <div class="bento-icon">📊</div>
+            <h3>BIM 360</h3>
+            <p>Gestión de proyectos en la nube</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <CourseList />
+    <Tutoriales />
+    <ContactUs />
+  </main>
 </Layout>
 
 <style>
-	main {
+  main {
+    padding-top: var(--header-height);
+  }
 
-	}
+  .bento-section {
+    padding: 5rem 0;
+    background: var(--bg-secondary);
+  }
 
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 1.5rem;
+  }
+
+  .bento-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: all var(--transition-base);
+    cursor: pointer;
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+
+  .bento-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .bento-card.wide {
+    grid-column: span 2;
+  }
+
+  .bento-icon {
+    font-size: 2.5rem;
+  }
+
+  .bento-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .bento-card p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+
+    .bento-card.large,
+    .bento-card.wide {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bento-card.large,
+    .bento-card.wide {
+      grid-column: span 1;
+    }
+  }
 </style>

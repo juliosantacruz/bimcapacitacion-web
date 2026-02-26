@@ -1,7 +1,7 @@
 ---
 title: 'Cómo colocar cotas o dimensiones en Revit'
 slug: 'como-colocar-cotas-en-revit'
-image: '@assets/tutorialCover/cover-colocacion-cotas.jpg'
+image: '../../assets/tutorialCover/cover-colocacion-cotas.jpg'
 imageAlt: 'Cover de tutorial'
 YTVideo: 'https://www.youtube.com/watch?v=-dfkMs9N93o'
 ---

@@ -1,24 +1,24 @@
 ---
 title: 'Curso Revit Basico'
 slug: 'curso-revit-basico'
-image: '../../assets/img/IsometricoDepartamentos.jpg'
-imageAlt: 'Isometrico '
+image: ../../assets/img/IsometricoDepartamentos.jpg
+imageAlt: 'Isometrico'
 ---
+## Introducción
 
- ## Introducción
 Mostrar la tecnología de modelado BIM a través de la aplicación de Autodesk Revit, orientada al control de información de una edificación, de manera que los alumnos puedan formarse una visión del programa y conocer su capacidad.
 
 ## Objetivos
-Descubrir las principales características y funciones de Autodesk Revit. Dominar las herramientas básicas de modelado del programa para elaborar cualquier tipo de proyecto de edificación y obtener documentación gráfica y tablas de cuantificación. 
 
-## Temario  
+Descubrir las principales características y funciones de Autodesk Revit. Dominar las herramientas básicas de modelado del programa para elaborar cualquier tipo de proyecto de edificación y obtener documentación gráfica y tablas de cuantificación.
 
-    
+## Temario
+
 1. Introducción BIM desde Revit
 2. Recorrido de interfaz del programa
-3. Diferencia entre proyecto y familias 
-4. Modelado de elementos constructivos (‐Losas ‐Muros ‐Puertas ‐Ventanas ‐Escaleras) 
-5. Manejo de niveles y sus propiedades (‐Visibility and graphics ‐Underlay ‐View range ‐Crop view ‐Diciplinas) 
+3. Diferencia entre proyecto y familias
+4. Modelado de elementos constructivos (‐Losas ‐Muros ‐Puertas ‐Ventanas ‐Escaleras)
+5. Manejo de niveles y sus propiedades (‐Visibility and graphics ‐Underlay ‐View range ‐Crop view ‐Diciplinas)
 6. Manejo de elevaciones (‐vistas en corte ‐fachada)
 7. Manejo de vistas 3d (‐Isométrico ‐Fotografías)
 8. Insertar componentes
