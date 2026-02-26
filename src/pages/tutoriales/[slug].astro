@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import ContactUs from "../../sections/ContactUs.astro";
 import { getCollection } from "astro:content";
 import { marked } from "marked";
-import { YouTube } from "@astro-community/astro-embed-youtube";
+import { YouTube } from 'astro-embed';
 
 export async function getStaticPaths() {
   const temarioEntries = await getCollection("tutoriales");
