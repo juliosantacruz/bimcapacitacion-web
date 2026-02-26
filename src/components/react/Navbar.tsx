@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, BookOpen, GraduationCap, Home } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import logo from "@assets/img/logoBimNormal.png"
 
 const navLinks = [
   { href: "/", label: "Inicio", icon: Home },
@@ -41,9 +42,9 @@ export default function Navbar() {
     >
       <nav className="navbar-container">
         <a href="/" className="navbar-logo">
-          <img 
-            src="/src/assets/img/1Logo-BIM-Capacitacion-768x432-1.png" 
-            alt="BIM Capacitación" 
+          <img
+            src={logo.src}
+            alt="BIM Capacitación"
             width={140}
             height={70}
           />
@@ -72,8 +73,8 @@ export default function Navbar() {
 
         <div className="navbar-actions">
           <ThemeToggle />
-          
-          <button 
+
+          <button
             className="mobile-menu-btn"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
