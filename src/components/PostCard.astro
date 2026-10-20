@@ -5,7 +5,7 @@ const { dataCard } = Astro.props;
 const { data } = dataCard;
 ---
 
-<a href={`${dataCard.collection}/${dataCard.slug}`} class="CardPost">
+<a href={`/${dataCard.collection}/${dataCard.slug}`} class="CardPost">
   <article>
     <div class="tarjeta-img">
       <Image src={data.image} width={340} height={240} alt="" />

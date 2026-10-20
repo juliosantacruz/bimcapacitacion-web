@@ -21,8 +21,7 @@ export default function RevitModel(ModelTest: any) {
     camara.position.y =5;
     camara.position.z = 25;
     // camara.lookAt(0, 1000000, 0);
-0
-    const renderer = new THREE.WebGL1Renderer();
+    const renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);
 
     currentRef?.appendChild(renderer.domElement);
@@ -78,7 +77,7 @@ export default function RevitModel(ModelTest: any) {
 
     const gltfLoader = new GLTFLoader();
     gltfLoader.load(
-      "./glbModel/IqeaModel.glb",
+      "/glbModel/IqeaModel.glb",
       (gltf) => {
         gltf.scene.scale.set(0.5, 0.5, 0.5);
 
@@ -92,11 +91,9 @@ export default function RevitModel(ModelTest: any) {
         camara.lookAt(gltf.scene.position);
         scene.add(gltf.scene);
       },
-      (xhr) => {
-        console.log(xhr.loaded / xhr.total, "% loaded");
-      },
+      undefined,
       (error) => {
-        console.log("An error happened => ", error);
+        console.error("Error al cargar el modelo 3D", error);
       }
     );
 

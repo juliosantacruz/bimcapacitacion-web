@@ -23,7 +23,7 @@ const contentBody = marked.parse(entry.body);
 const imageTemario = entry.data.image;
 ---
 
-<Layout title="Tutoriales" description="Tutoriales para ti..">
+<Layout title={`${entry.data.title} - BIM Capacitación`} description={`Temario del ${entry.data.title}`}>
   <main>
     <div class="pageTitle">
       <h1>{entry.data.title}</h1>

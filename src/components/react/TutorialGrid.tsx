@@ -28,6 +28,8 @@ export default function TutorialGrid({ tutorials }: TutorialGridProps) {
 
   return (
     <>
+      {/* Oculto: las categorías filtran por texto del título y casi todas salen vacías.
+          Reactivar cuando los tutoriales tengan un campo "category".
       <div className="filters">
         <div className="filter-icon">
           <Filter size={20} />
@@ -44,6 +46,7 @@ export default function TutorialGrid({ tutorials }: TutorialGridProps) {
           ))}
         </div>
       </div>
+      */}
 
       <motion.div
         className="tutorials-grid"
