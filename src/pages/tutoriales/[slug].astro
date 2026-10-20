@@ -36,7 +36,7 @@ const contentBody = marked.parse(entry.body);
 const videoUrl = entry.data.YTVideo;
 ---
 
-<Layout title="Tutoriales" description="Tutoriales para ti..">
+<Layout title={`${entry.data.title} - BIM Capacitación`} description={entry.data.title}>
   <main>
     <div class="pageTitle">
       <h1>{entry.data.title}</h1>
@@ -61,7 +61,7 @@ const videoUrl = entry.data.YTVideo;
           morePosts &&
             morePosts.map((element) => {
               return (
-                <article class="otherPostCard">
+                <a href={`/tutoriales/${element.slug}`} class="otherPostCard">
                   <Image
                     src={element.cover}
                     alt={element.altCover}
@@ -69,7 +69,7 @@ const videoUrl = entry.data.YTVideo;
                     height={180}
                   />
                   <h3>{element.title}</h3>
-                </article>
+                </a>
               );
             })
         }
@@ -124,6 +124,8 @@ const videoUrl = entry.data.YTVideo;
 
     width: 220px;
     text-align: center;
+    text-decoration: none;
+    color: inherit;
     /* margin: 0 30px; */
     img {
       width: 100%;

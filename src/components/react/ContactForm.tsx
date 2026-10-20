@@ -62,7 +62,18 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Sitio estático: sin backend, se abre el cliente de correo con el mensaje prellenado.
+    // TODO: reemplazar por POST a la API cuando exista el backend.
+    const subject = `Contacto web - ${formData.name}`;
+    const body = [
+      `Nombre: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Teléfono: ${formData.phone || "-"}`,
+      `Curso de interés: ${formData.course || "-"}`,
+      "",
+      formData.message,
+    ].join("\n");
+    window.location.href = `mailto:bimcapacitacion@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setIsSubmitting(false);
     setIsSuccess(true);
@@ -93,8 +104,8 @@ export default function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
       >
         <CheckCircle size={48} className="success-icon" />
-        <h3>¡Mensaje Enviado!</h3>
-        <p>Gracias por contactarnos. Te responderemos a la brevedad.</p>
+        <h3>¡Ya casi!</h3>
+        <p>Abrimos tu aplicación de correo con el mensaje listo. Solo presiona enviar. Si no se abrió, escríbenos a bimcapacitacion@gmail.com.</p>
         <button
           className="btn-reset"
           onClick={() => setIsSuccess(false)}
